@@ -47,7 +47,8 @@
               :background-color "#ffffff"
               :color "#000000")
              ("#prompt-area"
-              :background-color "#dddddd")
+	      :color "#000000"
+              :background-color "#ffffff")
              ("#input"
               :background-color "#dddddd"
               :color "#000000")
@@ -111,29 +112,43 @@
  ((nyxt/web-mode:highlighted-box-style
    (cl-css:css
     '((".nyxt-hint.nyxt-highlight-hint"
-       :background "#ff5555")))
+       :color "#aa0000"
+       )
+      ))
    :documentation "The style of highlighted boxes, e.g. link hints.")))
+
+(define-configuration nyxt/web-mode:web-mode
+ ((nyxt/web-mode:box-style
+   (cl-css:css
+    '((".nyxt-hint"
+       :color "#00aaaa"
+       )
+      ))
+   :documentation "The style of boxes, e.g. link hints.")))
 
 ;; Configure StatusLines Styles
 (define-configuration status-buffer
  ((style (str:concat
           %slot-default%
           (cl-css:css
-           '((* :clor "#000000")
+           '(
+	     (".button" :color "000000")
+	     (".button:hover" :color "aa0000")
 	     ("#controls"
               :border-top "1px solid #000000"
+              :border-bottom "1px solid #000000"
 	      :color "#000000"
-              :background-color "#000000")
+              :background-color "#ffffff")
              ("#url"
-              :background-color "#000000"
+              :background-color "#ffffff"
               :color "#000000"
               :border-top "1px solid #000000")
              ("#modes"
-              :background-color "#000000"
+              :background-color "#dddddd"
 	      :color "#000000"
               :border-top "1px solid #111111")
              ("#tabs"
-              :background-color "#000000"
+              :background-color "#ffffff"
               :color "#000000"
               :border-top "1px solid #111111")))))))
 
