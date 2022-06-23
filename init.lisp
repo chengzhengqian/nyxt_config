@@ -10,6 +10,19 @@
 
 
 
+(defun czq-handler (request-data)
+  (print "start-czq-handler, set android user agent")
+  (print request-data)
+  (set-android)
+  (print "------------------------")
+  request-data
+)
+
+(define-configuration buffer
+  ((request-resource-hook
+    (reduce #'hooks:add-hook
+            (mapcar #'make-handler-resource (list #'czq-handler))
+            :initial-value %slot-default%))))
 ;; (define-configuration nyxt/reduce-tracking-mode:reduce-tracking-mode
 ;;   ((nyxt/reduce-tracking-mode:preferred-user-agent
 ;;     ;; Safari on Mac. Taken from
