@@ -23,6 +23,7 @@
      ""))
 
 ;; Remove https/www from URL
+
 (defun laconic-format-status-url (buffer)
  (markup:markup
   (:span
@@ -42,7 +43,7 @@
           (mod (+ 5 (local-time:timestamp-hour (local-time:now))) 24)
           (local-time:timestamp-minute (local-time:now)))))
 
-;; Configure StatusLines Design
+;; ;; Configure StatusLines Design
 (defun laconic-format-status (window)
  (flet ((input-indicating-background ()
           (format nil "background-color: ~:[#50fa7b~;#ff5555~]"
@@ -69,6 +70,6 @@
                   :title (nyxt::list-modes buffer)
                   (laconic-format-status-modes buffer window)))))))
 
-;; Define Current Configuration
+;; ;; Define Current Configuration
 (define-configuration window
  ((status-formatter #'laconic-format-status)))

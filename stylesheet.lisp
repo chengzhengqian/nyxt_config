@@ -61,8 +61,8 @@
               :border "1px solid #111111"
               :background-color "#ffffff")
              ("#selection"
-              :background-color "#ffffff"
-              :color "#000000")
+              :background-color "#000000"
+              :color "#ffffff")
              (.marked :background-color "#ffffff"
                       :font-weight "bold"
                       :color "#111111")
@@ -161,4 +161,4 @@
               (a
                :background-color "#ffffff !important"
                :background-image "none !important"
-               :color "#111111 !important"))))))
+               :color "#0000ff !important"))))))
